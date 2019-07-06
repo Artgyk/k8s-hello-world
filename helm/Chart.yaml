@@ -1,0 +1,6 @@
+name: hello-world
+description: Test python application
+version: 0.0.1
+keywords:
+  - python
+  - hello-world

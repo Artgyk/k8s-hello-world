@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: api
+        image: "{{ .Values.image }}"
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8181
+        envFrom:
+          - configMapRef:
+              name: {{ .Chart.Name }}
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8181
+            initialDelaySeconds: 1
+            periodSeconds: 5
+            successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8181
+            initialDelaySeconds: 1
+            periodSeconds: 5
+            successThreshold: 1

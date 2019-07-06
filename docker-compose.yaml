@@ -1,0 +1,13 @@
+version: '2.4'
+
+services:
+  api:
+    build: .
+    environment:
+      LISTEN_PORT: 8181
+    ports:
+      - 8181:8181
+
+  test:
+    build: .
+    command: ["pytest"]
