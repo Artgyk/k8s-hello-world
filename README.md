@@ -38,7 +38,7 @@ Before deployment you must install local kubernetes cluster. For Mac and Windows
     ```
         minikube start
         
-        # Build stage builds docker image in local repository. This command will build image inside minikube
+        # Build stage doesn't push image to external hub. This command needed to build image inside minikube
         eval $(minikube docker-env)
     ```
     
