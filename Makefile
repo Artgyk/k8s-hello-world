@@ -1,6 +1,6 @@
 install:
 	pip install pipenv
-	pipenv install
+	pipenv install -dev
 build:
 	docker build . -t hello-world:1.0
 test:

@@ -38,7 +38,7 @@ Before deployment you must install local kubernetes cluster. For Mac and Windows
     ```
         minikube start
         
-        # Build stage builds docker image in local repository. This command will allow minikube access local repository on host machine
+        # Build stage builds docker image in local repository. This command will build image inside minikube
         eval $(minikube docker-env)
     ```
     
@@ -46,6 +46,17 @@ Before deployment you must install local kubernetes cluster. For Mac and Windows
     
     Foolow this documentation to install ingress for your platform
     https://kubernetes.github.io/ingress-nginx/deploy/
+    
+### Helm
+
+    Foolow installation guid
+    https://helm.sh/docs/install/#installing-helm
+    
+    After installation initialize helm
+    
+    ```
+        helm init
+    ```
     
 ### Install Web api dependency
 
@@ -88,7 +99,7 @@ Alternatively without python installation
     # For docker desctop
     curl http://localhost/hello-world/health
     # For minikube
-    curl http://192.168.99.100/hello-world/health
+    curl http://$(minikube ip)/hello-world/health
 ```
 
 Cleanup kubernetes from api deployment
