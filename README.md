@@ -14,7 +14,7 @@ Helm configuration contains:
 * Docker
 * Docker-compose (optional)
 * Helm
-* Python
+* Python 3
 * Local k8s cluster (docker-desktop / minikube)
 
 ## Installations
@@ -107,3 +107,17 @@ Cleanup kubernetes from api deployment
     make cleanup
 ```
 
+## Notes and Issues
+
+Project was tested on two environment: 
+* Mac - Docker Desktop 2.0.0.3; Engine: 18.09.2; Kubernetes: v1.10.11; helm 2.14.1
+* Ubuntu - minikube v0.33.1; helm 2.14.1
+
+Issues: 
+    make file not fully automized - required manual command
+    
+## TODO
+
+* automized installing ingress based on OS
+* Logging
+* Metrics and monitoring
