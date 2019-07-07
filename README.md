@@ -116,8 +116,10 @@ Project was tested on two environment:
 Issues: 
     make file not fully automized - required manual command (eval $(minikube docker-env))
     
+    
 ## TODO
 
 * automized installing ingress based on OS
+* Push image to external repository
 * Logging
 * Metrics and monitoring
