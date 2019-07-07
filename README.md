@@ -114,7 +114,7 @@ Project was tested on two environment:
 * Ubuntu - minikube v0.33.1; helm 2.14.1
 
 Issues: 
-    make file not fully automized - required manual command
+    make file not fully automized - required manual command (eval $(minikube docker-env))
     
 ## TODO
 
