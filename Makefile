@@ -1,9 +1,14 @@
+install:
+	pip install pipenv
+	pipenv install
 build:
 	docker build . -t hello-world:1.0
 test:
-	docker-compose build
-	docker-compose run test
+	pytest hello_world
 deploy:
 	helm upgrade -i hello-world ./helm
+
 smoke-test:
 	pytest smoketest
+cleanup:
+	kubectl delete ns hello-world
