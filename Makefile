@@ -6,7 +6,7 @@ build:
 test:
 	pytest hello_world
 deploy:
-	helm upgrade -i hello-world ./helm
+	helm upgrade -i --namespace hello-world  hello-world ./helm
 
 smoke-test:
 	pytest smoketest
